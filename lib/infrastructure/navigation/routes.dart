@@ -1,8 +1,10 @@
 class Routes {
   static Future<String> get initialRoute async {
     // TODO: implement method
-    return HOME;
+    return NAV_SCREEN;
   }
 
   static const HOME = '/home';
+  static const NAV_SCREEN = '/nav-screen';
+  static const CHAPTER = '/chapter';
 }

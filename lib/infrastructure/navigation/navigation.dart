@@ -31,5 +31,15 @@ class Nav {
       page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
     ),
+    GetPage(
+      name: Routes.NAV_SCREEN,
+      page: () => const NavScreenScreen(),
+      binding: NavScreenControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.CHAPTER,
+      page: () => const ChapterScreen(),
+      binding: ChapterControllerBinding(),
+    ),
   ];
 }

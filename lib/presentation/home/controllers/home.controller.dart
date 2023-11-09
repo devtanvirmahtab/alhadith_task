@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import '../../../domain/core/util/db_helper.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
 
   final count = 0.obs;
+  final bookList = [].obs;
 
   @override
   Future<void> onInit() async {
@@ -36,8 +36,8 @@ class HomeController extends GetxController {
     // final list = await db.rawQuery('SELECT * FROM books');
     // print("printing list ${list[0]['title']}");
 
-    final list = await DataBaseHelper.readBook();
-    print("booklist ${list[0].title}");
+     bookList.value = await DataBaseHelper.readBook();
+    print("booklist ${bookList[0].title}");
   }
 
   @override
