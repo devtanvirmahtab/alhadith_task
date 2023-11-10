@@ -1,12 +1,16 @@
 import 'package:get/get.dart';
 
+import '../../../domain/core/util/db_helper.dart';
+
 class ChapterController extends GetxController {
   //TODO: Implement ChapterController
+  final chapterList = [].obs;
 
-  final count = 0.obs;
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
+    chapterList.value = await DataBaseHelper.readChapter("bukhari");
+    print("booklist ${chapterList[0].title}");
   }
 
   @override
@@ -19,5 +23,4 @@ class ChapterController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
 }

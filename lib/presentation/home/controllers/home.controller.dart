@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import '../../../domain/core/util/db_helper.dart';
 
 class HomeController extends GetxController {
-
-  final count = 0.obs;
   final bookList = [].obs;
 
   @override
@@ -40,15 +38,4 @@ class HomeController extends GetxController {
     print("booklist ${bookList[0].title}");
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

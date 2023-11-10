@@ -1,3 +1,4 @@
+import 'package:alhadith_task/data/models/chapter_model.dart';
 import 'package:alhadith_task/data/models/dooks_model.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
@@ -34,6 +35,13 @@ class DataBaseHelper {
      List<HadithBook> bookList =  hadithBook.map((e) => HadithBook.fromMap(e)).toList();
      return bookList;
   }
+
+   static Future<List<ChapterModel>> readChapter(bookName)async{
+     Database db = await initDB();
+     final chapterModel = await db.rawQuery('SELECT * FROM Test WHERE book_name = $bookName');
+     List<ChapterModel> chapterList =  chapterModel.map((e) => ChapterModel.fromMap(e)).toList();
+     return chapterList;
+   }
 
   /// get all the words from english dictionary
   // Future<List<EnglishWord>> getAllTheWordsEnglish() async {
