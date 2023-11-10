@@ -18,6 +18,7 @@ class DataBaseHelper {
 
     if (!dbExists) {
       // Copy from asset
+      // please add hadith_bn_test.db file to assets folder then run ther project
       ByteData data = await rootBundle.load(path.join("assets", "hadith_bn_test.db"));
       List<int> bytes =
       data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
