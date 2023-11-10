@@ -1,3 +1,4 @@
+import 'package:alhadith_task/core/constants/color_constant.dart';
 import 'package:alhadith_task/data/models/chapter_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,9 +21,8 @@ class ChapterItemCard extends StatelessWidget {
         Get.toNamed(Routes.CHAPTER);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        height: 100,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -31,28 +31,27 @@ class ChapterItemCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: CircleAvatar(
-                    child: Text(
-                      chapterModel.id.toString(),
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                    ),
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: CircleAvatar(
+                backgroundColor: primaryColor,
+                child: Text(
+                  chapterModel.chapterId.toString(),
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
                   ),
                 ),
-                const SizedBox(width: 10),
-                TitleSubtitleText(
-                  title: chapterModel.title,
-                  subtitle: chapterModel.hadithRange,
-                ),
-              ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: TitleSubtitleText(
+                title: chapterModel.title,
+                subtitle: "হাদিসের রেঞ্জ : ${chapterModel.hadithRange}",
+              ),
             ),
           ],
         ),

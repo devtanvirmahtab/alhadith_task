@@ -20,6 +20,7 @@ class TitleSubtitleText extends StatelessWidget {
       children: [
         Text(
           title,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             color: isWhite ? Colors.white : const Color(0xFF101010),
             fontSize: 14,
@@ -29,6 +30,7 @@ class TitleSubtitleText extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           subtitle,
+          overflow: TextOverflow.ellipsis,
           style:  TextStyle(
             color:isWhite ? Colors.white : Color(0xFF878787),
             fontSize: 12,

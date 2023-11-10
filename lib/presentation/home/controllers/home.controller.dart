@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../domain/core/util/db_helper.dart';
+import '../../../data/providers/database/db_helper.dart';
 
 class HomeController extends GetxController {
   final bookList = [].obs;

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,21 +9,25 @@ import 'title_subtitle_text.dart';
 
 class BookItemCard extends StatelessWidget {
   const BookItemCard({
-    super.key, required this.hadithBook,
+    super.key,
+    required this.hadithBook,
   });
+
   final HadithBook hadithBook;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Get.toNamed(Routes.CHAPTER);
+      onTap: () {
+        Get.toNamed(Routes.CHAPTER, arguments: {
+          "data": hadithBook.bookName.toString(),
+          "title": hadithBook.title.toString(),
+          "subtitle": hadithBook.numberOfHadith.toString(),
+        });
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(
-            horizontal: 20, vertical: 10),
-        padding: const EdgeInsets.symmetric(
-            horizontal: 20, vertical: 15),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         height: 100,
         decoration: BoxDecoration(
           color: Colors.white,

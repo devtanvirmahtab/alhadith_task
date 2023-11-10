@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:alhadith_task/core/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,9 @@ class NavScreenScreen extends GetView<NavScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F4F4),
-      body: controller.pageList[controller.selectedIndex.value],
+      body: Obx(() {
+        return controller.pageList[controller.selectedIndex.value];
+      }),
       bottomNavigationBar: Container(
         height: 80,
         margin: const EdgeInsets.only(
@@ -100,11 +103,11 @@ class NavIcon extends StatelessWidget {
             icon,
             width: 30,
             height: 30,
-            color: isActive ? const Color(0xff1AA483) : const Color(0xff101010),
+            color: isActive ? primaryColor : const Color(0xff101010),
           ),
           const SizedBox(height: 15),
           Container(
-            color: isActive ? const Color(0xff1AA483) : const Color(0x0fffffff),
+            color: isActive ? primaryColor : whiteColor,
             width: 40,
             height: 5,
           )

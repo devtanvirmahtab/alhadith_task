@@ -38,7 +38,7 @@ class DataBaseHelper {
 
    static Future<List<ChapterModel>> readChapter(bookName)async{
      Database db = await initDB();
-     final chapterModel = await db.rawQuery('SELECT * FROM Test WHERE book_name = $bookName');
+     final chapterModel = await db.rawQuery('''SELECT * FROM chapter WHERE book_name like "%$bookName%" ''');
      List<ChapterModel> chapterList =  chapterModel.map((e) => ChapterModel.fromMap(e)).toList();
      return chapterList;
    }

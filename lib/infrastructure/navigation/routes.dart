@@ -4,7 +4,8 @@ class Routes {
     return NAV_SCREEN;
   }
 
+  static const CHAPTER = '/chapter';
   static const HOME = '/home';
   static const NAV_SCREEN = '/nav-screen';
-  static const CHAPTER = '/chapter';
+  static const REMARK = '/remark';
 }

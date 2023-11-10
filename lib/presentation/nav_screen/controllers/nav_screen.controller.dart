@@ -3,6 +3,7 @@ import 'package:alhadith_task/presentation/home/home.screen.dart';
 import 'package:get/get.dart';
 
 import '../../../core/constants/asset_constant.dart';
+import '../../remark/remark.screen.dart';
 import '../nav_screen.screen.dart';
 
 class NavScreenController extends GetxController {
@@ -11,9 +12,9 @@ class NavScreenController extends GetxController {
 
   final pageList = [
     const HomeScreen(),
+    const RemarkScreen(),
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const RemarkScreen(),
     const HomeScreen(),
   ];
 

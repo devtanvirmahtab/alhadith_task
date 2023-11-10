@@ -41,5 +41,10 @@ class Nav {
       page: () => const ChapterScreen(),
       binding: ChapterControllerBinding(),
     ),
+    GetPage(
+      name: Routes.REMARK,
+      page: () => const RemarkScreen(),
+      binding: RemarkControllerBinding(),
+    ),
   ];
 }
