@@ -21,7 +21,6 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
-/assets/db/hadith_bn_test.db
 
 # Flutter/Dart/Pub related
 **/doc/api/
